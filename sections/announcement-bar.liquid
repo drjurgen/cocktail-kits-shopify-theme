@@ -2,12 +2,14 @@
   {%- if section.settings.home_page_only == false or template.name == 'index' -%}
 
     {%- if section.settings.link == blank -%}
-      <div>
+      <div class="announcement-container">
     {%- else -%}
       <a href="{{ section.settings.link }}" >
     {%- endif -%}
 
-      <p>{{ section.settings.text | escape }}</p>
+      <p class="header-first-announcement">{{ section.settings.announcement1 | escape }}</p>
+
+      <p class="header-second-announcement">{{ section.settings.announcement2 | escape }}</p>
 
     {%- if section.settings.link == blank -%}
       </div>
@@ -36,8 +38,14 @@
     },
     {
       "type": "text",
-      "id": "text",
-      "label": "Announcement text",
+      "id": "announcement1",
+      "label": "First announcement",
+      "default": "Announce something here"
+    },
+    {
+      "type": "text",
+      "id": "announcement2",
+      "label": "Second announcement",
       "default": "Announce something here"
     },
     {

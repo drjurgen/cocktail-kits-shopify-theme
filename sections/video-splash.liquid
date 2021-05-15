@@ -1,0 +1,91 @@
+{%- if section.settings.hero_layout == 'full_width' and section.settings.hero_size == 'adapt' -%}
+  {%- if section.settings.image.aspect_ratio == blank -%}
+    {%- assign min_aspect_ratio = 2.0 -%}
+  {%- else -%}
+    {%- assign min_aspect_ratio = section.settings.image.aspect_ratio -%}
+  {%- endif -%}
+  {%- assign wrapper_height = 100 | divided_by: min_aspect_ratio -%}
+  {%- style -%}
+    .hero-{{ section.id }} {
+      height: {{- wrapper_height -}}vw !important;
+    }
+  {%- endstyle -%}
+{%- endif -%}
+<div data-section-id="{{ section.id }}" data-section-type="hero-section" class="video-splash-container">
+    <video id="videobackground" autoplay="" loop="" muted="" playsinline="">
+        <source src="{{section.settings.video_url}}" poster="IMAGES/bg-vid-poster.jpg" type="video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+    </video>
+      <div class="hero__inner__video">
+        <div class="page-width text-center">
+        </div>
+      </div>
+    </div>
+    <noscript>
+      <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+    </noscript>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "de": "Splash video / Hero video",
+    "en": "Splash video / Hero video",
+    "es": "Video URL",
+    "fr": "Image avec texte",
+    "it": "Immagine con testo",
+    "ja": "テキストオーバーレイ付き画像",
+    "nl": "Foto met tekstoverlay",
+    "pt-BR": "Imagem com texto",
+    "zh-CN": "带文本叠加的图片",
+    "zh-TW": "附文字疊加的圖片"
+  },
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": {
+        "de": "Video URL",
+        "en": "Video URL",
+        "es": "Video URL",
+        "fr": "Video URL",
+        "it": "Video URL",
+        "ja": "Video URL",
+        "nl": "Video URL",
+        "pt-BR": "Video URL",
+        "zh-CN": "Video URL",
+        "zh-TW": "Video URL"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Splash video / Hero video",
+        "en": "Splash video / Hero video",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      },
+      "category": {
+        "de": "Video",
+        "en": "Video",
+        "es": "Video",
+        "fr": "Video",
+        "it": "Video",
+        "ja": "画像",
+        "nl": "Afbeelding",
+        "pt-BR": "Imagem",
+        "zh-CN": "图片",
+        "zh-TW": "圖片"
+      }
+    }
+  ]
+}
+{% endschema %}
+
