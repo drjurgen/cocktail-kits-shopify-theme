@@ -1,4 +1,4 @@
-<footer class="">
+<footer style="background-color: {{ section.settings.footer_color }}">
   <div class="footer-info">
     <a href={{section.settings.contact_url}}>Kontakt</a>
     <a href={{section.settings.tos_url}}>Handelsbetingelser</a>
@@ -28,7 +28,13 @@
     "zh-CN": "带文本叠加的图片",
     "zh-TW": "附文字疊加的圖片"
   },
-  "settings": [
+  "settings": [ 
+    {
+      "type": "color",
+      "id": "footer_color",
+      "label": "Footer Color",
+      "default": "#ffffff"
+    },
     {
       "type": "url",
       "id": "contact_url",

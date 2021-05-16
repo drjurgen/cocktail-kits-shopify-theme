@@ -2,7 +2,7 @@
   {%- if section.settings.home_page_only == false or template.name == 'index' -%}
 
     {%- if section.settings.link == blank -%}
-      <div class="announcement-container">
+      <div class="announcement-container" style="background-color: {{ section.settings.announcement_color }}">
     {%- else -%}
       <a href="{{ section.settings.link }}" >
     {%- endif -%}
@@ -24,6 +24,12 @@
 {
   "name": "Announcement bar",
   "settings": [
+    {
+      "type": "color",
+      "id": "announcement_color",
+      "label": "Announcement Color",
+      "default": "#ffffff"
+    },
     {
       "type": "checkbox",
       "id": "show_announcement",

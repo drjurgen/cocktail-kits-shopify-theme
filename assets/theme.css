@@ -8963,7 +8963,6 @@ hr {
 	align-items: center;
 	position: relative;
 	z-index: 11;
-	background-color: #fff;
 }
 
 .header-first-announcement {
@@ -9040,8 +9039,9 @@ hr {
 }
 
 .header-logo {
+	margin-top: 1px;
 	max-width: 162.23px !important;
-	min-height: 75px !important;
+	min-height: 73px !important;
 	background-color: #fff !important;
 	display: flex !important;
 	justify-content: flex-start;
@@ -9051,7 +9051,6 @@ hr {
 .logo-left {
 	width: auto;
 	height: auto;
-	margin-top: -2px;
 }
 
 /* End of Header / Navbar */
@@ -9099,7 +9098,6 @@ hr {
 /*  */
 /* Footer */
 footer {
-	background-color: #f5deae;
 	margin-top: 0;
 	padding: 30px 55px;
 
