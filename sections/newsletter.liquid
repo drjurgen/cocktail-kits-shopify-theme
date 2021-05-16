@@ -1,6 +1,6 @@
 <div class="newsletter-section{% if section.settings.show_background %} index-section--newsletter-background{% endif %}">
   <div class="page-width">
-    <div class="section-header text-center">
+    <div class="section-header text-center newsletter-header">
       {% if section.settings.section_title != blank %}
         <h2 class="h2">{{ section.settings.section_title | escape }}</h2>
       {% endif %}
@@ -9,20 +9,20 @@
       {% endif %}
     </div>
     {%- assign formId = 'Contact_' | append: section.id -%}
-    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field newsletter-form' %}
       {%- if form.posted_successfully? -%}
         <p class="form-message form-message--success" tabindex="-1" data-form-status>
           {{ 'general.newsletter_form.confirmation' | t }}
         </p>
       {%- endif -%}
       <input type="hidden" name="contact[tags]" value="newsletter">
-      <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+      <div class="input-group {% if form.errors %} input-group--error{% endif %} newsletter-container">
         <input type="email"
           name="contact[email]"
           id="{{ formId }}-email"
           class="input-group__field{% if form.errors %} input--error{% endif %}"
           value="{{ form.email }}"
-          placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+          placeholder="Email"
           aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
           aria-required="true"
           autocorrect="off"
@@ -35,7 +35,7 @@
           >
         <span class="input-group__btn">
           <button type="submit" class="btn" name="commit">
-            <span>{{ 'general.newsletter_form.submit' | t }}</span>
+            <span>{{section.settings.news_subscribe}}</span>
           </button>
         </span>
       </div>
@@ -79,6 +79,22 @@
   },
   "class": "index-section index-section--flush",
   "settings": [
+    {
+      "type": "text",
+      "id": "news_subscribe",
+      "label": {
+        "de": "Subscribe Call to action text",
+        "en": "Subscribe Call to action text",
+        "es": "Subscribe Call to action text",
+        "fr": "Subscribe Call to action text",
+        "it": "Subscribe Call to action text",
+        "ja": "Subscribe Call to action text",
+        "nl": "Subscribe Call to action text",
+        "pt-BR": "Subscribe Call to action text",
+        "zh-CN": "Subscribe Call to action text",
+        "zh-TW": "Subscribe Call to action text"
+      }
+    },   
     {
       "type": "text",
       "id": "section_title",

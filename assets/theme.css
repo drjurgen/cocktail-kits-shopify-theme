@@ -9162,3 +9162,45 @@ html {
 }
 
 /* End of Footer */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Newsletter */
+.newsletter-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.newsletter-container {
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.newsletter-container input {
+	margin-bottom: 0;
+}
+
+.newsletter-header {
+	margin-bottom: 0;
+}
+
+.newsletter-header h2 {
+	text-transform: initial;
+}
+
+@media only screen and (min-width: 800px) {
+	.newsletter-container {
+		width: 70%;
+	}
+
+	.newsletter-header h2 {
+		font-size: calc(((var(--font-size-header)) / (var(--font-size-base))) * 1em);
+	}
+}
+
+/* End of Newsletter */
