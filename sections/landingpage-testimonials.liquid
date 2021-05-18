@@ -1,0 +1,53 @@
+<section id="landingpage-testimonials" style="background-color: {{ section.settings.background_color }}">
+    <div class="trustpilot-container">
+        <a href="{{ section.settings.review_url }}" target="_blank" rel="noopener">Anmeld os på <img src="{{ 'trustpilot.svg' | asset_url }}" alt="Cocktail-kits Trustpilot"></a>
+    </div>
+    <div class="page-width testimonials-container">
+        <div class="text-col">
+            {{section.settings.testimonial_1}}
+        </div>
+        <div class="text-col">
+            {{section.settings.testimonial_2}}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Landingpage Testimonials"
+  },
+  "settings": [ 
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    }, 
+    {
+      "type": "richtext",
+      "id": "testimonial_1",
+      "label": "First Testimonial"
+    },
+    {
+      "type": "richtext",
+      "id": "testimonial_2",
+      "label": "Second Testimonial"
+    },
+    {
+      "type": "url",
+      "id": "review_url",
+      "label": "Trustpilot URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Landingpage Testimonials"
+      },
+      "category": {
+        "en": "Landingpage"
+      }
+    }
+  ]
+}
+{% endschema %}

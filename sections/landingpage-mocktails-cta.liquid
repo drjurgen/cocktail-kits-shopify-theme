@@ -1,0 +1,61 @@
+<section id="landingpage-mocktails-cta">
+    <div class="page-width mocktails-cta-container">
+        <div class="sm-img lazyload" style="background-image: url({{ section.settings.image_small | img_url: 'master' }});"></div>
+        <div class="text-col">
+            <h1>{{section.settings.heading}}</h1>
+            {{section.settings.paragraph}}
+        </div>
+        <div class="lg-img lazyload" style="background-image: url({{ section.settings.image_large | img_url: 'master' }});"></div>
+        <a href="{{ section.settings.cta_url }}" class="mocktails-cta">{{ section.settings.cta_text }}</a>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Landingpage Mocktails CTA"
+  },
+  "settings": [  
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Call To Action Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Call To Action URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_small",
+      "label": "Image - Small"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_large",
+      "label": "Image - Large"
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Landingpage Mocktails CTA"
+      },
+      "category": {
+        "en": "Landingpage"
+      }
+    }
+  ]
+}
+{% endschema %}
