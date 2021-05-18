@@ -15,10 +15,8 @@
     <video id="videobackground" autoplay="" loop="" muted="" playsinline="">
         <source src="{{section.settings.video_url}}" poster="IMAGES/bg-vid-poster.jpg" type="video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
     </video>
-      <div class="hero__inner__video">
-        <div class="page-width text-center">
-        </div>
-      </div>
+    <div class="hero__inner__video">
+      <div class="page-width text-center"></div>
     </div>
     <noscript>
       <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>

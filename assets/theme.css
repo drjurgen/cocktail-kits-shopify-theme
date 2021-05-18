@@ -8947,6 +8947,12 @@ hr {
 		max-width: 1400px;
 	}
 }
+
+@media only screen and (min-width: 1600px) {
+	.page-width {
+		max-width: 1600px;
+	}
+}
 /* End of General settings */
 /*  */
 /*  */
@@ -9117,6 +9123,10 @@ footer {
 	padding-bottom: 25px;
 }
 
+.footer-info a:hover {
+	text-decoration: underline;
+}
+
 .footer-info p {
 	margin: 0;
 }
@@ -9169,6 +9179,10 @@ html {
 /*  */
 /*  */
 /* Newsletter */
+.newsletter-section {
+	padding-bottom: 55px;
+}
+
 .newsletter-form {
 	display: flex;
 	justify-content: center;
@@ -9204,3 +9218,201 @@ html {
 }
 
 /* End of Newsletter */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Landingpage Upper CTA */
+#upper-cta {
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	margin-bottom: 50px;
+}
+
+#upper-cta .img-col {
+	min-width: 100%;
+	min-height: 250px;
+	margin: 10px 0 0 0;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#upper-cta .img-col img {
+	width: 100%;
+}
+
+#upper-cta .text-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: 10px;
+}
+
+#upper-cta .text-col a {
+	width: fit-content;
+	margin-top: 10px;
+	padding: 15px 30px;
+	background-color: #f5deae;
+	font-weight: 700;
+	color: #000;
+	transition: all 0.2s ease-in-out;
+}
+
+#upper-cta .text-col a:hover {
+	opacity: 0.9;
+}
+
+@media only screen and (min-width: 800px) {
+	#upper-cta {
+		flex-direction: row;
+		margin-bottom: 0;
+	}
+
+	#upper-cta .img-col {
+		min-width: 180px;
+		min-height: 180px;
+		max-width: 180px;
+		max-height: 180px;
+		margin: 0 0 0 15px;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	#upper-cta .img-col {
+		min-width: 220px;
+		min-height: 220px;
+		max-width: 220px;
+		max-height: 220px;
+	}
+
+	#upper-cta .text-col {
+		padding-right: 35px;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	#upper-cta .img-col {
+		min-width: 280px;
+		min-height: 280px;
+		max-width: 280px;
+		max-height: 280px;
+	}
+
+	#upper-cta .text-col {
+		padding-right: 85px;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	#upper-cta .img-col {
+		min-width: 325px;
+		min-height: 325px;
+		max-width: 325px;
+		max-height: 325px;
+	}
+}
+/* End of Landingpage Upper CTA */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Landingpage 3 columns */
+#landingpage-3-col {
+	min-height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 0;
+}
+
+.three-col-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+#landingpage-3-col .img-col {
+	width: 100%;
+	height: 60vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: 10px;
+}
+
+@media only screen and (min-width: 800px) {
+	#landingpage-3-col {
+		padding: 0;
+	}
+
+	.three-col-container {
+		flex-direction: row-reverse;
+	}
+
+	#landingpage-3-col .img-col {
+		width: 33%;
+		margin-top: 0;
+		height: 65vh;
+		margin-right: 15px;
+	}
+
+	#landingpage-3-col .text-col {
+		width: 33%;
+		padding-left: 30px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	#landingpage-3-col .text-col {
+		padding-left: 60px;
+	}
+}
+/* End of Landingpage 3 columns */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* Landingpage Midder Text */
+#landingpage-midder-text {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#landingpage-midder-text .text-col {
+	width: 100%;
+	padding: 40px 0;
+}
+
+@media only screen and (min-width: 800px) {
+	#landingpage-midder-text {
+		height: 55vh;
+	}
+
+	#landingpage-midder-text .text-col {
+		width: 400px;
+	}
+
+	#landingpage-midder-text .text-col h1 {
+		text-align: center;
+	}
+}
+
+/* End of Landingpage Midder Text */
