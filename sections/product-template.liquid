@@ -15,28 +15,8 @@
   {%- assign compare_at_price = current_variant.compare_at_price -%}
   {%- assign price = current_variant.price -%}
 
-  {% case section.settings.media_size %}
-    {% when 'small' %}
-      {%- assign product_media_width = 'medium-up--one-third' -%}
-      {%- assign product_description_width = 'medium-up--two-thirds' -%}
-      {%- assign height = 345 -%}
-    {% when 'medium' %}
-      {%- assign product_media_width = 'medium-up--one-half' -%}
-      {%- assign product_description_width = 'medium-up--one-half' -%}
-      {%- assign height = 530 -%}
-    {% when 'large' %}
-      {%- assign product_media_width = 'medium-up--two-thirds' -%}
-      {%- assign product_description_width = 'medium-up--one-third' -%}
-      {%- assign height = 720 -%}
-    {% when 'full' %}
-      {%- assign product_media_width = '' -%}
-      {%- assign product_description_width = '' -%}
-      {%- assign height = 1090 -%}
-      {%- assign enable_image_zoom = false -%}
-  {% endcase %}
-
-  <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.media_size }}-media{% endif %}">
-    <div class="grid__item product-single__media-group {{ product_media_width }}{% if section.settings.media_size == 'full' %} product-single__media-group--full{% endif %}" data-product-single-media-group>
+  <div class="product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.media_size }}-media{% endif %}">
+    <div class="product-single__media-group" data-product-single-media-group>
       {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
 
       {%- for media in product.media -%}
@@ -45,7 +25,7 @@
 
       <noscript>
         {% capture product_image_size %}{{ height }}x{% endcapture %}
-        <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">
+        <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: 100%;">
       </noscript>
 
       {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
@@ -131,7 +111,7 @@
       {% endif %}
     </div>
 
-    <div class="grid__item {{ product_description_width }}">
+    <div class="single-product-info">
       <div class="product-single__meta">
 
         <h1 class="product-single__title">{{ product.title }}</h1>
@@ -141,7 +121,7 @@
             {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
           </div>
 
-          {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+          {% comment %} {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
             <div class="product__policies rte" data-product-policies>
               {%- if cart.taxes_included -%}
                 {{ 'products.product.include_taxes' | t }}
@@ -150,7 +130,7 @@
                 {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
               {%- endif -%}
             </div>
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
 
           {% capture "form_classes" -%}
             product-form product-form-{{ section.id }}
@@ -197,7 +177,7 @@
                   <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
                   <input type="number" id="Quantity-{{ section.id }}"
                     name="quantity" value="1" min="1" pattern="[0-9]*"
-                    class="product-form__input product-form__input--quantity" data-quantity-input
+                    class="product-form__input product-form__input--quantity product-quantity" data-quantity-input
                   >
                 </div>
               </div>
@@ -270,7 +250,9 @@
         </div>
 
         <div class="product-single__description rte">
-          {{ product.description }}
+
+          <div data-station-tabs-app data-station-tabs-product="{{ product.handle }}">{{ product.description }}</div>
+          {% comment %} {% include 'product-accordion' %} {% endcomment %}
         </div>
 
         {% if section.settings.show_share_buttons %}
