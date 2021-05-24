@@ -260,6 +260,18 @@
         {% endif %}
     </div>
   </div>
+
+  <script>
+    console.log( {{ product.metafields.accentuate | json }} )
+
+    setTimeout(() => {
+      let vurdering = document.querySelector("#st-vurdering_0-0 .station-tabs-content-inner");
+      vurdering.innerHTML = `{% include 'taste-assessment' taste: product.metafields.accentuate %}`;
+      console.log("vurdering", vurdering);
+    }, 25)
+
+    
+  </script>
 </div>
 
 {% unless product == empty %}

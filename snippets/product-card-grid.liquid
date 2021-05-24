@@ -16,7 +16,7 @@
 
   <div class="product-img" style="background-image: url({{ img_url }})"></div>
   <script>
-    console.log("{{ product.title }}", {{ product | json }});
+    // console.log("{{ product.title }}", {{ product | json }});
     // console.log({{ img_url }});
   </script>
 
@@ -33,7 +33,4 @@
     <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
     {% include 'product-price-listing', product: product, show_vendor: show_vendor %}
   </div>
-
-  
-
 </div>

@@ -27,8 +27,16 @@
 
 {% assign current_variant = product.selected_or_first_available_variant %}
 
+{% assign sodme = product.metafields.accentuate.sdme %}
+{% assign syrlighed = product.metafields.accentuate.syrlighed %}
+{% assign staerkhed = product.metafields.accentuate.strkhed_alkohol %}
+
+
 <script type="application/ld+json">
 {
+  "sodme": {{ product.sodme }},
+  "syrlighed": {{ product.syrlighed }},
+  "staerkhed"; {{ product.staerkhed }},
   "@context": "http://schema.org/",
   "@type": "Product",
   "name": {{ product.title | json }},

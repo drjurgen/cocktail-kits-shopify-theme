@@ -1,0 +1,64 @@
+<section id="contact">
+    <div class="page-width">
+        <div class="page-content-container">
+            <div class="contact-col">
+                <div class="lazyload contact-img" style="background-image: url({{ section.settings.image_left | img_url: 'master' }});"></div>
+                {% comment %} {{ section.settings.image_left | img_url: 'master', scale: 1 | img_tag: section.settings.image_left.alt | img_alt: section.settings.image_left.alt, 'lazyload' }} {% endcomment %}
+            </div>
+
+            <div class="contact-col">
+                <h1>{{ page.title }}</h1>
+                {{ page.content }}
+                
+                <div class="contact-wrapper">
+                    <div class="contact-info-wrapper">
+                        <img src="{{ 'phone.svg' | asset_url }}" alt="Cocktail-kits phone number">
+                        <a href="tel:{{section.settings.tel_num}}">{{section.settings.tel_num}}</a>
+                    </div>
+
+                    <div class="contact-info-wrapper">
+                        <img src="{{ 'mail.svg' | asset_url }}" alt="Cocktail-kits mail">
+                        <a href="mailto:{{section.settings.mail}}">{{section.settings.mail}}</a>
+                    </div>
+
+                    <div class="contact-info-wrapper">
+                        <img src="{{ 'address.svg' | asset_url }}" alt="Cocktail-kits address">
+                        <p>{{section.settings.address}}</p>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Contact Content"
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "tel_num",
+      "label": "Telephone number"
+    },
+    {
+      "type": "text",
+      "id": "mail",
+      "label": "Email"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address"
+    }
+  ],
+  "presets": [
+  ]
+}
+{% endschema %}
