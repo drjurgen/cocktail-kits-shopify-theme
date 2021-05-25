@@ -544,7 +544,7 @@ html {
 	height: 250px;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 25% 75%;
 	margin-top: 15px;
 }
 
@@ -924,6 +924,17 @@ html {
 .cocktails-card,
 .mocktails-card {
 	width: 100%;
+	animation: stagger_kf 0.2s ease-in-out 1 backwards;
+}
+
+@keyframes stagger_kf {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 #mocktails {

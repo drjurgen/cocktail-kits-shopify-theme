@@ -12,6 +12,18 @@
     </div>
 </section>
 
+<script>
+  //script for instagram grid
+  setTimeout(() => {
+    const instaPosts = document.querySelectorAll(".ooo-instagram-media");
+    instaPosts.forEach(post => {
+        post.setAttribute("rel", "noopener");
+        post.setAttribute("aria-label", "Instagram");
+        post.classList.add(".instagram-post");
+      });
+  }, 1000);
+</script>
+
 {% schema %}
 {
   "name": {

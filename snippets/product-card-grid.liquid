@@ -12,7 +12,7 @@
   {% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
   {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
   {%- assign preview_image = product.featured_media.preview_image -%}
-  {%- assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '.' -%}
+  {%- assign img_url = preview_image | img_url: '500x500' | replace: '_1x1.', '.' -%}
 
   <div class="product-img" style="background-image: url({{ img_url }})"></div>
   <script>
