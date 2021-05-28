@@ -4,9 +4,11 @@
         {{section.settings.paragraph}}
         <a href="{{section.settings.cta_url}}">{{section.settings.cta_text}}</a>
     </div>
-    <div class="img-col lazyload">{{ section.settings.image_left | img_url: '400x400', scale: 1 | img_tag: section.settings.image_left.alt | img_alt: section.settings.image_left.alt, 'lazyload' }}</div>
-    <div class="img-col lazyload">{{ section.settings.image_middle | img_url: '400x400', scale: 1 | img_tag: section.settings.image_middle.alt | img_alt: section.settings.image_middle.alt, 'lazyload' }}</div>
-    <div class="img-col lazyload">{{ section.settings.image_right | img_url: '400x400', scale: 1 | img_tag: section.settings.image_right.alt | img_alt: section.settings.image_right.alt, 'lazyload' }}</div>
+    <div class="img-col-container">
+      <div class="img-col lazyload">{{ section.settings.image_left | img_url: '400x400', scale: 1 | img_tag: section.settings.image_left.alt | img_alt: section.settings.image_left.alt, 'lazyload' }}</div>
+      <div class="img-col lazyload">{{ section.settings.image_middle | img_url: '400x400', scale: 1 | img_tag: section.settings.image_middle.alt | img_alt: section.settings.image_middle.alt, 'lazyload' }}</div>
+      <div class="img-col lazyload">{{ section.settings.image_right | img_url: '400x400', scale: 1 | img_tag: section.settings.image_right.alt | img_alt: section.settings.image_right.alt, 'lazyload' }}</div>
+    </div>
 </section>
 
 {% schema %}

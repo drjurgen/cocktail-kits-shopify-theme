@@ -1,16 +1,18 @@
-<footer style="background-color: {{ section.settings.footer_color }}">
+<footer class="site-footer" style="background-color: {{ section.settings.footer_color }}">
   <div class="footer-info">
     <a href={{section.settings.contact_url}}>Kontakt</a>
     <a href={{section.settings.tos_url}}>Handelsbetingelser</a>
     <a href={{section.settings.privacy_cookie_url}}>Privatlivs- og cookiepolitik</a>
+    <a href={{section.settings.smiley_url}} target="_blank" rel="noopener">Smileyrapport</a>
+
     <p>CVR: {{section.settings.cvr}}</p>
     <p>© Copyright {{ 'now' | date: "%Y" }} Cocktail-kits</p>
   </div>
 
   <div class="socials">
-    <a href={{section.settings.facebook_url}} target="_blank" rel="noopener"><img src="{{ 'facebook-f.svg' | asset_url }}" alt="Cocktail-kits Facebook"></a>
-    <a href={{section.settings.youtube_url}} target="_blank" rel="noopener"><img src="{{ 'youtube.svg' | asset_url }}" alt="Cocktail-kits Youtube"></a>
-    <a href={{section.settings.instagram_url}} target="_blank" rel="noopener"><img src="{{ 'instagram.svg' | asset_url }}" alt="Cocktail-kits Instagram"></a>
+    <a href={{section.settings.facebook_url}} target="_blank" rel="noopener"><img src="{{ 'facebook-f.svg' | asset_url }}" alt="Cocktail-kits Facebook" style="width: 25px; height: 25px;"></a>
+    <a href={{section.settings.youtube_url}} target="_blank" rel="noopener"><img src="{{ 'youtube.svg' | asset_url }}" alt="Cocktail-kits Youtube" style="width: 25px; height: 25px;"></a>
+    <a href={{section.settings.instagram_url}} target="_blank" rel="noopener"><img src="{{ 'instagram.svg' | asset_url }}" alt="Cocktail-kits Instagram" style="width: 25px; height: 25px;"></a>
   </div>
 </footer>
 
@@ -81,6 +83,13 @@
         "pt-BR": "Privacy & Cookie Policy URL",
         "zh-CN": "Privacy & Cookie Policy URL",
         "zh-TW": "Privacy & Cookie Policy URL"
+      }
+    },
+    {
+      "type": "url",
+      "id": "smiley_url",
+      "label": {
+        "en": "Smiley Rapport"
       }
     },
     {

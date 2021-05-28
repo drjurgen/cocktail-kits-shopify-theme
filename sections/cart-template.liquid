@@ -10,12 +10,12 @@
 
     <form action="{{ routes.cart_url }}" method="post" novalidate class="cart">
       <table>
-        {% comment %} <thead class="cart__row cart__row--heading">
+        <thead class="cart__row cart__row--heading">
           <th scope="col">{{ 'cart.label.product' | t }}</th>
           <th class="text-right" scope="col">{{ 'cart.label.price' | t }}</th>
           <th class="text-right small--hide" scope="col">{{ 'cart.label.quantity' | t }}</th>
           <th class="text-right small--hide" scope="col">{{ 'cart.label.total' | t }}</th>
-        </thead> {% endcomment %}
+        </thead>
         <tbody data-cart-line-items>
           {%- for item in cart.items -%}
             <tr class="cart__row" data-cart-item data-cart-item-key="{{ item.key }}" data-cart-item-url="{{ item.url }}" data-cart-item-title="{{ item.title }}" data-cart-item-index="{{ forloop.index }}" data-cart-item-quantity="{{ item.quantity }}">
@@ -125,9 +125,9 @@
                       <dt>
                         <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
                       </dt>
-                      {% comment %} <dd data-cart-item-regular-price>
+                      <dd data-cart-item-regular-price>
                         {{ item.original_price | money }}
-                      </dd> {% endcomment %}
+                      </dd>
                     </div>
 
                     {%- comment -%}
@@ -273,7 +273,7 @@
                 {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
               {%- endif -%}
             {%- endcapture -%}
-            <div class="cart__shipping rte">{{ taxes_shipping_checkout }}</div>
+            <div class="cart__shipping rte tax-checkout">{{ taxes_shipping_checkout }}</div>
             <div class="cart__buttons-container">
               <div class="cart__submit-controls">
                 {%- unless section.settings.cart_ajax_enable -%}
@@ -281,6 +281,7 @@
                   class="cart__submit btn btn--secondary"
                   value="{{ 'cart.general.update' | t }}">
                 {%- endunless -%}
+                
                 <input type="submit" name="checkout"
                   class="cart__submit btn btn--small-wide"
                   value="{{ 'cart.general.checkout' | t }}">

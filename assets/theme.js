@@ -2176,12 +2176,8 @@ theme.Drawers = (function () {
 	}
 
 	Drawer.prototype.init = function () {
-		// document
-		//   .querySelector(this.config.selectors.openVariant)
-		//   .addEventListener('click', this.open.bind(this));
-		// this.drawer
-		//   .querySelector(this.config.selectors.close)
-		//   .addEventListener('click', this.close.bind(this));
+		// document.querySelector(this.config.selectors.openVariant).addEventListener("click", this.open.bind(this));
+		// this.drawer.querySelector(this.config.selectors.close).addEventListener("click", this.close.bind(this));
 	};
 
 	Drawer.prototype.open = function (evt) {

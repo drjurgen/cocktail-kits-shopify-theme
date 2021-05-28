@@ -11,7 +11,7 @@
     }
   {%- endstyle -%}
 {%- endif -%}
-<div data-section-id="{{ section.id }}" data-section-type="hero-section" class="video-splash-container" data-layout="fixed-width"> 
+<div data-section-id="{{ section.id }}" data-section-type="hero-section" class="video-splash-container" data-layout="fixed-width" id="Hero-{{ section.id }}"> 
     <video id="videobackground" autoplay loop muted playsinline>
         <source src="{{section.settings.video_url}}" poster="IMAGES/bg-vid-poster.jpg" type="video/mp4;codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
     </video>

@@ -307,6 +307,33 @@
   </script>
 {% endif %}
 
+<script>
+
+  let aBarHeight;
+  let scrollY = window.pageYOffset;
+  const header = document.querySelector(".site-header");
+
+  if(document.querySelector("#shopify-section-announcement-bar").contains(document.querySelector(".announcement-container"))) {
+    aBarHeight = document.querySelector(".announcement-container").offsetHeight;
+    document.addEventListener('scroll',  detectScroll);
+  } else {
+    aBarHeight = 0;
+    header.classList.add("fixed-header");
+  }
+
+  function detectScroll(event) {
+    scrollY = window.pageYOffset;
+    if(scrollY === aBarHeight || scrollY > aBarHeight) {
+      if(!header.classList.contains("fixed-header")) {
+        header.classList.add("fixed-header");
+      }
+    } else {
+      header.classList.remove("fixed-header");
+    }
+  }
+
+</script>
+
 {% schema %}
 {
   "name": {

@@ -286,7 +286,7 @@
 
         <div class="product-single__description rte">
           {% unless product == empty %}
-            {{ product.description }}
+            <div data-station-tabs-app data-station-tabs-product="{{ product.handle }}">{{ product.description }}</div>
           {% else %}
             {{ 'homepage.onboarding.product_description' | t }}
           {% endunless %}

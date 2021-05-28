@@ -47,22 +47,24 @@
         </div>
     </div>
 
-    <h2>stærkhed (alkohol)</h2>
-    <div class="taste-container">
-        <div class="line"></div>
-        <div class="option">
-            <p>Lidt stærk</p>
-            <div class="dot">{% if staerkhed == "Lidt stærk" %}<img class="chosen" src="{{ 'cocktail-glass.svg' | asset_url }}" alt="Cocktail assessment glass">{% endif %}</div>
-        </div>
+    {% if staerkhed != undefined or staerkhed != null %}
+        <h2>stærkhed (alkohol)</h2>
+        <div class="taste-container">
+            <div class="line"></div>
+            <div class="option">
+                <p>Lidt stærk</p>
+                <div class="dot">{% if staerkhed == "Lidt stærk" %}<img class="chosen" src="{{ 'cocktail-glass.svg' | asset_url }}" alt="Cocktail assessment glass">{% endif %}</div>
+            </div>
 
-        <div class="option">
-            <p>Middel</p>
-            <div class="dot">{% if staerkhed == "Middel" %}<img class="chosen" src="{{ 'cocktail-glass.svg' | asset_url }}" alt="Cocktail assessment glass">{% endif %}</div>
-        </div>
+            <div class="option">
+                <p>Middel</p>
+                <div class="dot">{% if staerkhed == "Middel" %}<img class="chosen" src="{{ 'cocktail-glass.svg' | asset_url }}" alt="Cocktail assessment glass">{% endif %}</div>
+            </div>
 
-        <div class="option">
-            <p>Meget stærk</p>
-            <div class="dot">{% if staerkhed == "Meget stærk" %}<img class="chosen" src="{{ 'cocktail-glass.svg' | asset_url }}" alt="Cocktail assessment glass">{% endif %}</div>
+            <div class="option">
+                <p>Meget stærk</p>
+                <div class="dot">{% if staerkhed == "Meget stærk" %}<img class="chosen" src="{{ 'cocktail-glass.svg' | asset_url }}" alt="Cocktail assessment glass">{% endif %}</div>
+            </div>
         </div>
-    </div>
+    {% endif %}
 </div>
