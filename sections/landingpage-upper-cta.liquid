@@ -1,3 +1,7 @@
+{%- assign product_left = all_products[section.settings.product_left] -%}
+{%- assign product_middle = all_products[section.settings.product_middle] -%}
+{%- assign product_right = all_products[section.settings.product_right] -%}
+
 <section id="upper-cta" class="page-width">
     <div class="text-col">
         <h1>{{section.settings.heading}}</h1>
@@ -5,9 +9,17 @@
         <a href="{{section.settings.cta_url}}">{{section.settings.cta_text}}</a>
     </div>
     <div class="img-col-container">
-      <div class="img-col lazyload">{{ section.settings.image_left | img_url: '400x400', scale: 1 | img_tag: section.settings.image_left.alt | img_alt: section.settings.image_left.alt, 'lazyload' }}</div>
-      <div class="img-col lazyload">{{ section.settings.image_middle | img_url: '400x400', scale: 1 | img_tag: section.settings.image_middle.alt | img_alt: section.settings.image_middle.alt, 'lazyload' }}</div>
-      <div class="img-col lazyload">{{ section.settings.image_right | img_url: '400x400', scale: 1 | img_tag: section.settings.image_right.alt | img_alt: section.settings.image_right.alt, 'lazyload' }}</div>
+      <a href="/products/{{product_left.handle}}" class="img-col">
+          <div class="lazyload" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0">{{ product_left.featured_image | img_url: '400x400', scale: 1 | img_tag: product_left.featured_image.alt | img_alt: product_left.featured_image.alt, 'lazyload' }}</div>
+      </a>
+
+      <a href="/products/{{product_middle.handle}}" class="img-col">
+          <div class="lazyload" data-aos="fade-up" data-aos-delay="200" data-aos-offset="25">{{ product_middle.featured_image | img_url: '400x400', scale: 1 | img_tag: product_middle.featured_image.alt | img_alt: product_middle.featured_image.alt, 'lazyload' }}</div>
+      </a>
+
+      <a href="/products/{{product_right.handle}}" class="img-col">
+          <div class="lazyload" data-aos="fade-up" data-aos-delay="300" data-aos-offset="50">{{ product_right.featured_image | img_url: '400x400', scale: 1 | img_tag: product_right.featured_image.alt | img_alt: product_right.featured_image.alt, 'lazyload' }}</div>
+      </a>
     </div>
 </section>
 
@@ -38,19 +50,19 @@
       "label": "Call To Action Link"
     },
     {
-      "type": "image_picker",
-      "id": "image_left",
-      "label": "Image - Left"
+      "type": "product",
+      "id": "product_left",
+      "label": "Product - Left"
     },
     {
-      "type": "image_picker",
-      "id": "image_middle",
-      "label": "Image - Middle"
+      "type": "product",
+      "id": "product_middle",
+      "label": "Product - Middle"
     },
     {
-      "type": "image_picker",
-      "id": "image_right",
-      "label": "Image - Right"
+      "type": "product",
+      "id": "product_right",
+      "label": "Product - Right"
     }
   ],
   "presets": [

@@ -63,28 +63,10 @@
         <div class="page-width">
           <div class="filters-toolbar">
             <div class="filters-toolbar__item-wrapper">
-              {% if section.settings.tags_enable %}
-                {% unless collection.all_tags.size == 0 %}
-                  <div class="filters-toolbar__item-child">
-                    <label class="filters-toolbar__label filter-sort-label" for="FilterTags">{{ 'collections.filters.title_tags' | t }}:</label>
-                    <div class="filters-toolbar__input-wrapper select-group">
-                      <select class="filters-toolbar__input hidden" name="FilterTags" id="FilterTags" aria-describedby="a11y-refresh-page-message a11y-selection-message" data-select-input>
-                        <option value="{{ collection.url }}">{{ 'collections.filters.all_tags' | t }}</option>
-                        {% for tag in collection.all_tags %}
-                          {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
-                          <option value="{{ new_url }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
-                        {% endfor %}
-                      </select>
-                      {% include 'icon-chevron-down' %}
-                    </div>
-                  </div>
-                {% endunless %}
-              {% endif %}
-
               {% if section.settings.sort_enable %}
                 <div class="filters-toolbar__item-child">
                   {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                  <label class="filters-toolbar__label filter-sort-label" for="SortBy">{{ 'collections.sorting.title' | t }}:</label>
+                  <label class="filters-toolbar__label filter-sort-label" for="SortBy"><img src="{{ 'sort.svg' | asset_url }}" alt="Sort slider icon" style="width: 13px; height: 13px; margin-right: 3px; margin-bottom: -2px"> {{ 'collections.sorting.title' | t }}:</label>
                   <div class="filters-toolbar__input-wrapper select-group">
                     <select name="sort_by" id="SortBy"
                       class="filters-toolbar__input hidden"
@@ -101,6 +83,25 @@
                     {% include 'icon-chevron-down' %}
                   </div>
                 </div>
+              {% endif %}
+
+
+              {% if section.settings.tags_enable %}
+                {% unless collection.all_tags.size == 0 %}
+                  <div class="filters-toolbar__item-child">
+                    <label class="filters-toolbar__label filter-sort-label" for="FilterTags"><img src="{{ 'sliders-h.svg' | asset_url }}" alt="Sort slider icon" style="width: 13px; height: 13px; margin-right: 3px; margin-bottom: -2px"> {{ 'collections.filters.title_tags' | t }}:</label>
+                    <div class="filters-toolbar__input-wrapper select-group">
+                      <select class="filters-toolbar__input hidden" name="FilterTags" id="FilterTags" aria-describedby="a11y-refresh-page-message a11y-selection-message" data-select-input>
+                        <option value="{{ collection.url }}">{{ 'collections.filters.all_tags' | t }}</option>
+                        {% for tag in collection.all_tags %}
+                          {%- assign new_url = tag | link_to_tag: tag | split: 'href="' | last | split: '"' | first -%}
+                          <option value="{{ new_url }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
+                        {% endfor %}
+                      </select>
+                      {% include 'icon-chevron-down' %}
+                    </div>
+                  </div>
+                {% endunless %}
               {% endif %}
             </div>
 

@@ -1,0 +1,53 @@
+{%- assign product = all_products[section.settings.featured_product] -%}
+{% assign shortDescription = product.description  | split: '</p>' %}
+
+<section id="featured-product-{{product.id}}">
+    <div class="featured-product-container page-width">
+        <div class="featured-col">
+          <div class="featured-product-img" style="background-image: url({{ product.images[1] | img_url: '700x700' }});" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0"></div>
+        </div>
+
+        <div class="featured-col">
+          <div class="featured-product-desc">
+            <h1>{{ product.title }}</h1>
+            <p>{{ shortDescription[0] }}</p>
+            <a href="/products/{{product.handle}}" class="featured-product-cta" style="background-color: {{ section.settings.cta_color }}">{{ section.settings.cta_text}}</a>
+          </div>
+        </div>    
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": {
+    "en": "Landingpage Product"
+  },
+  "settings": [ 
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Featured Product"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "CTA Background Color"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Landingpage Featured Product"
+      },
+      "category": {
+        "en": "Landingpage"
+      }
+    }
+  ]
+}
+{% endschema %}

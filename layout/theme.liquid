@@ -27,6 +27,9 @@
   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
   <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
   {%- if canonical_url != blank  -%}
     <link rel="canonical" href="{{ canonical_url }}">
   {%- endif -%}
@@ -169,6 +172,12 @@
 </head>
 
 <body class="template-{{ request.page_type | handle }}">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init({
+        once: true,
+      });
+  </script>
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 

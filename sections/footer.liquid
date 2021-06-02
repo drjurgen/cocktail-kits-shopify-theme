@@ -1,19 +1,19 @@
 <footer class="site-footer" style="background-color: {{ section.settings.footer_color }}">
   <div class="footer-info">
-    <a href={{section.settings.contact_url}}>Kontakt</a>
-    <a href={{section.settings.tos_url}}>Handelsbetingelser</a>
-    <a href={{section.settings.privacy_cookie_url}}>Privatlivs- og cookiepolitik</a>
-    <a href={{section.settings.smiley_url}} target="_blank" rel="noopener">Smileyrapport</a>
-
+    {% for link in linklists.footer.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+    <a href={{section.settings.smiley_url}} target="_blank" rel="noopener">{{ section.settings.health_status }}</a>
     <p>CVR: {{section.settings.cvr}}</p>
     <p>© Copyright {{ 'now' | date: "%Y" }} Cocktail-kits</p>
   </div>
 
   <div class="socials">
     <a href={{section.settings.facebook_url}} target="_blank" rel="noopener"><img src="{{ 'facebook-f.svg' | asset_url }}" alt="Cocktail-kits Facebook" style="width: 25px; height: 25px;"></a>
-    <a href={{section.settings.youtube_url}} target="_blank" rel="noopener"><img src="{{ 'youtube.svg' | asset_url }}" alt="Cocktail-kits Youtube" style="width: 25px; height: 25px;"></a>
+    <a href={{section.settings.youtube_url}} target="_blank" rel="noopener"><img src="{{ 'youtube.svg' | asset_url }}" alt="Cocktail-kits Youtube" sstyle="width: 25px; height: 25px;"></a>
     <a href={{section.settings.instagram_url}} target="_blank" rel="noopener"><img src="{{ 'instagram.svg' | asset_url }}" alt="Cocktail-kits Instagram" style="width: 25px; height: 25px;"></a>
   </div>
+
 </footer>
 
 {% schema %}
@@ -38,51 +38,10 @@
       "default": "#ffffff"
     },
     {
-      "type": "url",
-      "id": "contact_url",
+      "type": "text",
+      "id": "health_status",
       "label": {
-        "de": "Contact URL",
-        "en": "Contact URL",
-        "es": "Contact URL",
-        "fr": "Contact URL",
-        "it": "Contact URL",
-        "ja": "Contact URL",
-        "nl": "Contact URL",
-        "pt-BR": "Contact URL",
-        "zh-CN": "Contact URL",
-        "zh-TW": "Contact URL"
-      }
-    },
-    {
-      "type": "url",
-      "id": "tos_url",
-      "label": {
-        "de": "Terms & conditions URL",
-        "en": "Terms & conditions URL",
-        "es": "Terms & conditions URL",
-        "fr": "Terms & conditions URL",
-        "it": "Terms & conditions URL",
-        "ja": "Terms & conditions URL",
-        "nl": "Terms & conditions URL",
-        "pt-BR": "Terms & conditions URL",
-        "zh-CN": "Terms & conditions URL",
-        "zh-TW": "Terms & conditions URL"
-      }
-    },
-    {
-      "type": "url",
-      "id": "privacy_cookie_url",
-      "label": {
-        "de": "Privacy & Cookie Policy URL",
-        "en": "Privacy & Cookie Policy URL",
-        "es": "Privacy & Cookie Policy URL",
-        "fr": "Privacy & Cookie Policy URL",
-        "it": "Privacy & Cookie Policy URL",
-        "ja": "Privacy & Cookie Policy URL",
-        "nl": "Privacy & Cookie Policy URL",
-        "pt-BR": "Privacy & Cookie Policy URL",
-        "zh-CN": "Privacy & Cookie Policy URL",
-        "zh-TW": "Privacy & Cookie Policy URL"
+        "en": "Smileyrapport - Text"
       }
     },
     {

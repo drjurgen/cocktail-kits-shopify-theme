@@ -1,15 +1,18 @@
 <section id="landingpage-testimonials" style="background-color: {{ section.settings.background_color }}">
-    <div class="trustpilot-container">
+    <div class="testimonials-container page-width">
+      <div class="trustpilot-container">
         <a href="{{ section.settings.review_url }}" target="_blank" rel="noopener">Anmeld os på <img src="{{ 'trustpilot.svg' | asset_url }}" alt="Cocktail-kits Trustpilot" style="width: 91.63px; height: 20px;"></a>
+      </div>
+      <div class="reviews-container">
+          <div class="text-col">
+              {{section.settings.testimonial_1}}
+          </div>
+          <div class="text-col">
+              {{section.settings.testimonial_2}}
+          </div>
+      </div>
     </div>
-    <div class="page-width testimonials-container">
-        <div class="text-col">
-            {{section.settings.testimonial_1}}
-        </div>
-        <div class="text-col">
-            {{section.settings.testimonial_2}}
-        </div>
-    </div>
+    
 </section>
 
 {% schema %}

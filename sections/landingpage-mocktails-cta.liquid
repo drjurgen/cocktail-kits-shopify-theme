@@ -1,11 +1,11 @@
 <section id="landingpage-mocktails-cta">
     <div class="page-width mocktails-cta-container">
-        <div class="sm-img lazyload" style="background-image: url({{ section.settings.image_small | img_url: '500x500' }});"></div>
+        <div class="sm-img lazyload" style="background-image: url({{ section.settings.image_small | img_url: '500x500' }});" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0"></div>
         <div class="text-col">
             <h1>{{section.settings.heading}}</h1>
             {{section.settings.paragraph}}
         </div>
-        <div class="lg-img lazyload" style="background-image: url({{ section.settings.image_large | img_url: '1000x1000' }});"></div>
+        <div class="lg-img lazyload" style="background-image: url({{ section.settings.image_large | img_url: '1000x1000' }});" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0"></div>
         <a href="{{ section.settings.cta_url }}" class="mocktails-cta">{{ section.settings.cta_text }}</a>
     </div>
 </section>

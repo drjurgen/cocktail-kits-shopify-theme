@@ -4,8 +4,8 @@
             <h1>{{section.settings.heading}}</h1>
             {{section.settings.paragraph}}
         </div>
-        <div class="img-col lazyload" style="background-image: url({{ section.settings.image_left | img_url: '700x700' }});"></div>
-        <div class="img-col lazyload" style="background-image: url({{ section.settings.image_right | img_url: '700x700' }});"></div>
+        <div class="img-col lazyload" style="background-image: url({{ section.settings.image_left | img_url: '700x700' }});" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0"></div>
+        <div class="img-col lazyload" style="background-image: url({{ section.settings.image_right | img_url: '700x700' }});" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0"></div>
     </div>
 </section>
 

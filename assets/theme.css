@@ -9069,7 +9069,7 @@ footer .socials {
 
 footer .socials a {
 	margin: 0 10px;
-	width: 25px;
+	/* width: 25px; */
 	height: 25px;
 }
 
@@ -9098,6 +9098,8 @@ html {
 		flex-direction: row;
 		align-items: center;
 		padding-bottom: 0;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
 
 	.footer-info a,
