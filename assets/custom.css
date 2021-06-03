@@ -384,7 +384,9 @@ html {
 
 #upper-cta .text-col a:hover {
 	opacity: 0.9;
-	color: rgb(89, 89, 89);
+	color: rgb(62, 62, 62);
+	transform: scale(1.02);
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 800px) {
@@ -584,15 +586,15 @@ html {
 }
 
 .mocktails-cta-container .sm-img {
-	width: 50%;
-	height: 175px;
+	width: 45%;
+	/* height: 175px; */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
 .mocktails-cta-container .text-col {
-	width: 50%;
+	width: 55%;
 	padding-left: 10px;
 }
 
@@ -623,7 +625,9 @@ html {
 
 .mocktails-cta:hover {
 	opacity: 0.9;
-	color: rgb(89, 89, 89);
+	color: rgb(62, 62, 62);
+	transform: scale(1.02);
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 500px) {
@@ -763,6 +767,15 @@ html {
 		width: 946px;
 		height: 470px;
 		place-self: stretch;
+		margin-left: 42px;
+	}
+
+	.mocktails-cta-container .text-col {
+		margin-left: 42px;
+	}
+
+	.mocktails-cta-container .mocktails-cta {
+		margin-left: 42px;
 	}
 }
 /* End of mocktails-cta */
@@ -802,6 +815,13 @@ html {
 	display: flex;
 	align-items: center;
 	color: #000;
+}
+
+.trustpilot-container a:hover {
+	opacity: 0.9;
+	color: rgb(62, 62, 62);
+	transform: scale(1.02);
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .trustpilot-container a img {
@@ -987,6 +1007,13 @@ html {
 	color: #000;
 	transition: all 0.2s ease-in-out;
 	text-align: center;
+}
+
+.featured-product-cta:hover {
+	opacity: 0.9;
+	color: rgb(62, 62, 62);
+	transform: scale(1.02);
+	box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (min-width: 700px) {
